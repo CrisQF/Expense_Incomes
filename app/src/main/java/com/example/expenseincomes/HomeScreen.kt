@@ -1,0 +1,28 @@
+package com.example.expenseincomes
+
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.Surface
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.constraintlayout.compose.ConstraintLayout
+
+
+@Composable
+fun HomeScreen(){
+    Surface(modifier = Modifier.fillMaxSize()) {
+        ConstraintLayout(modifier = Modifier.fillMaxSize()) {
+            val (nameRow, list, card, topBar) = createRefs()
+            Image(painter = painterResource(id = R.drawable.rectangle_9), contentDescription = null, modifier = Modifier.contrainAs())
+        }
+
+    }
+
+}
+
+@Composable
+@Preview(showBackground = true)
+fun PreviewHomeScreen() {
+    HomeScreen()
+}
+
