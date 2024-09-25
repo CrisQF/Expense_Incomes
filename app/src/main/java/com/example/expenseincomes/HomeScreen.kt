@@ -1,9 +1,11 @@
 package com.example.expenseincomes
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.constraintlayout.compose.ConstraintLayout
 
@@ -13,9 +15,17 @@ fun HomeScreen(){
     Surface(modifier = Modifier.fillMaxSize()) {
         ConstraintLayout(modifier = Modifier.fillMaxSize()) {
             val (nameRow, list, card, topBar) = createRefs()
-            Image(painter = painterResource(id = R.drawable.rectangle_9), contentDescription = null, modifier = Modifier.contrainAs())
-        }
+            Image(
+                painter = painterResource(id = R.drawable.rectangle_9),
+                contentDescription = null,
+                modifier = Modifier.constrainAs(topBar) {
+                    top.linkTo(parent.top)
+                    start.linkTo(parent.start)
+                    end.linkTo(parent.end)
 
+                })
+
+        }
     }
 
 }
